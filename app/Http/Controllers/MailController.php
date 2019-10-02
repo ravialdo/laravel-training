@@ -14,7 +14,11 @@ class MailController extends Controller
      */
     public function index()
     {
-        return Mail::all();
+        $data = array(
+          'surat' => Mail::all(),
+        );
+
+        return view('mails', $data);
     }
 
     /**

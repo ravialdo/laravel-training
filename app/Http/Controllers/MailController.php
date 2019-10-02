@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mail;
+use Session;
 
 class MailController extends Controller
 {
@@ -84,6 +85,9 @@ class MailController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Mail::where('id',$id)->delete();
+        Session::flash('status','Data surat berhasil dihapus!');
+
+        return redirect('Mails');
     }
 }

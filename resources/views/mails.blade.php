@@ -36,9 +36,9 @@
                           <td>{{ $data->mail_from }}</td>
                           <td>{{ $data->mail_to }}</td>
                           <td>{{ $data->mail_subject }}</td>
-                          
+
                           <td>
-                              <form class="float-left" action="/students/{{$data->id}}" method="POST">
+                              <form class="float-left" action="/Mails/{{$data->id}}" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn btn-danger">Hapus</button>

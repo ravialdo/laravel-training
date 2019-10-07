@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mail;
+use App\MailType;
 use Session;
 
 class MailController extends Controller
 {
+  public function __construct(){
+
+      $this->middleware([
+          'auth',
+          'level:admin',
+      ]);
+
+  }
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +38,10 @@ class MailController extends Controller
      */
     public function create()
     {
-        //
+        $data = array(
+          'type' =>
+        );
+        return view('mails-create');
     }
 
     /**

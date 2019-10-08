@@ -6,7 +6,7 @@
   <a class="btn btn-primary" href="{{ url('/students') }}"> Dashboard Students</a>
 
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Dashboard Mails</div>
 
@@ -21,7 +21,7 @@
 
                     <a href="Mails/create" class="btn btn-success mb-3">Tambah Data Surat</a>
 
-                    <table class="table table-striped">
+                    <table class="table table-striped table-responsive">
                       <thead>
                         <tr>
                           <th scope="col">NO</th>

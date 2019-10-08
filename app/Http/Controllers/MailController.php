@@ -39,9 +39,10 @@ class MailController extends Controller
     public function create()
     {
         $data = array(
-          'type' =>
+          'type' => MailType::all(),
         );
-        return view('mails-create');
+
+        return view('mails-create', $data);
     }
 
     /**

@@ -53,7 +53,35 @@ class MailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+		
+		$request->validate([
+			'file_upload' => 'required|image',
+		]); 
+		
+		$extension = $request->file_upload->getClientOriginalExtension();
+		$file = $request->file_upload;
+          $size = $request->file_upload->getClientSize();
+	     $file_name = now()->format('d-m-Y').'-'.$request->file_upload->getClientOriginalName();
+	
+		Mail::create([
+			'incoming_at' => $request->incoming_at,
+			'mail_code' => $request->mail_code,
+			'mail_date' => $request->mail_date,
+			'mail_from' => $request->mail_from,
+			'mail_to' => $request->mail_to,
+			'mail_subject' => $request->mail_subject,
+			'description' => $request->description,
+			'file_upload' => $file_name,
+			'mail_type_id' => $request->mail_type_id,
+			'user_id' => $request->user_id,
+		]);
+	
+       	 $file->move('files', $file_name);
+		 Session::flash('status','Surat Berhasil Dikirim!');
+		 Session::flash('color','success');
+		
+		return redirect('/Mails');
+		
     }
 
     /**
@@ -75,7 +103,12 @@ class MailController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = array(
+			'surat' => Mail::find($id),
+			'type' => MailType::all(),
+		);
+		
+		return view('mails-edit', $data);
     }
 
     /**

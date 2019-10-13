@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
 
-  <a class="btn btn-primary" href="<?php echo e(url('/students')); ?>"> Dashboard Students</a>
+  <a class="btn btn-primary my-3" href="<?php echo e(url('/students')); ?>"> Dashboard Students</a>
 
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -20,7 +20,7 @@
 
                     <a href="Mails/create" class="btn btn-success mb-3">Tambah Data Surat</a>
 
-                    <table class="table table-striped table-responsive">
+                    <table class="table table-striped">
                       <thead>
                         <tr>
                           <th scope="col">NO</th>
@@ -46,7 +46,7 @@
                                 <button class="btn btn-danger">Hapus</button>
                             </form>
 
-                            <a href="students/<?php echo e($data->id); ?>/edit" class="btn btn-primary ml-2">Ubah</a>
+                            <a href="Mails/<?php echo e($data->id); ?>/edit" class="btn btn-primary ml-2">Ubah</a>
 
                           </td>
                         </tr>

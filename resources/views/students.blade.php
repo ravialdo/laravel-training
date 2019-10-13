@@ -4,7 +4,7 @@
 
 <div class="container">
 
-  <a class="btn btn-primary" href="{{ url('/Mails') }}"> Dashboard Mails</a>
+  <a class="btn btn-primary my-3" href="{{ url('/Mails') }}"> Dashboard Mails</a>
 
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -22,13 +22,15 @@
 
                     <a href="students/create" class="btn btn-success mb-3">Tambah Data Siswa</a>
 
-                    <table class="table table-striped table-responsive">
+                    <table class="table table-striped">
                       <thead>
                         <tr>
                           <th scope="col">NO</th>
                           <th scope="col">NIS</th>
                           <th scope="col">NAMA</th>
+				   	 
                           <th scope="col">AKSI</th>
+					
                         </tr>
                       </thead>
                       <tbody>
@@ -38,6 +40,7 @@
                           <th scope="row">1</th>
                           <td>{{ $data->nis }}</td>
                           <td>{{ $data->nama}}</td>
+					 
                           <td>
 
                               <form class="float-left" action="/students/{{$data->id}}" method="POST">

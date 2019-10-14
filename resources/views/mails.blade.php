@@ -25,9 +25,9 @@
                       <thead>
                         <tr>
                           <th scope="col">NO</th>
-                          <th scope="col">Mail From</th>
-                          <th scope="col">Mail To</th>
-                          <th scope="col">Subject</th>
+                          <th scope="col">Kode</th>
+                          <th scope="col">Tipe Surat</th>
+                          <th scope="col">Yang Buat</th>
                           <th scope="col">AKSI</th>
                         </tr>
                       </thead>
@@ -36,9 +36,9 @@
                         @foreach($surat as $data)
                         <tr>
                           <th scope="row">1</th>
-                          <td>{{ $data->mail_from }}</td>
-                          <td>{{ $data->mail_to }}</td>
-                          <td>{{ $data->mail_subject }}</td>
+                          <td>{{ $data->mail_code }}</td>
+                          <td>{{ $data->mailType->type }}</td>
+                            <td>{{ $data->user->email }}</td>
 
                           <td>
                               <form class="float-left" action="/Mails/{{$data->id}}" method="POST">

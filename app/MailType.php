@@ -12,7 +12,7 @@ class MailType extends Model
 
     public function mails(){
 
-      return $this->hasMany('\App\Mail');
-      
+      return $this->hasMany('App\Mail');
+
     }
 }

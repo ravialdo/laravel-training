@@ -87,7 +87,7 @@
                       <div class="form-group">
                         <div class="custom-file">
                         <input type="file" name="file_upload" class="custom-file-input">
-                        <label class="custom-file-label">File Upload Mail Format .pdf .txt</label>
+                        <label class="custom-file-label">File Upload Mail</label>
                       </div>
 					@error('file_upload')
 							<div class="ml-1 text-danger text-xs">

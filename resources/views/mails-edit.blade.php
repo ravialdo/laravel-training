@@ -21,7 +21,7 @@
 
                       <div class="form-group">
 					   <label>Incoming</label>
-                    	   <input type="datetime-local" class="form-control col-7" name="incoming_at" value="{{ $surat->incoming_at }}">
+                    	   <input type="text" class="form-control col-7" name="incoming_at" value="{{ $surat->incoming_at }}">
                     	</div>
 
                       <div class="form-group">
@@ -52,7 +52,7 @@
                       <div class="form-group">
                         <div class="custom-file">
                         <input type="file" name="file_upload" class="custom-file-input" value="{{ $surat->file_upload }}">
-                        <label class="custom-file-label">File Upload Mail Format .pdf .txt</label>
+                        <label class="custom-file-label">File Upload</label>
                       </div>
 					@error('file_upload')
 							<div class="ml-1 text-danger text-xs">

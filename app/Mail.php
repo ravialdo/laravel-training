@@ -11,4 +11,10 @@ class Mail extends Model
     protected $fillable = [
 		'incoming_at', 'mail_code', 'mail_date', 'mail_from', 'mail_to', 'mail_subject', 'description', 'file_upload', 'mail_type_id', 'user_id'
     ];
+
+    public function mail_type(){
+
+      return $this->belongsTo('\App\MailType');
+
+    }
 }

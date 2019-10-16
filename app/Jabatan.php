@@ -10,4 +10,6 @@ class Jabatan extends Model
 
     protected $table = 'jabatan';
 
+    protected $primaryKey = 'id_jabatan';
+
 }

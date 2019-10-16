@@ -24,10 +24,8 @@ class MailController extends Controller
      */
     public function index()
     {
-
-
         $data = array(
-          'surat' => Mail::all(),
+          'surat' => Mail::paginate(3),
         );
 
         return view('mails', $data);

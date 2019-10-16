@@ -23,4 +23,9 @@ class Mail extends Model
       return $this->belongsTo('App\User');
 
     }
+
+    public function mail_categori()
+    {
+        return $this->belongsToMany('App\MailCategori','mail_mail_categories','mail_category_id','mail_id');
+    }
 }

@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\Mail;
+use App\MailCategori;
+
 class MailSeeder extends Seeder
 {
     /**
@@ -24,6 +26,40 @@ class MailSeeder extends Seeder
 
     public function run()
     {
+
+      \DB::table('mail_mail_categories')->insert(
+            [
+                [
+                    'mail_category_id' => 1,
+                    'mail_id' => 1
+                ],
+                [
+                    'mail_category_id' => 1,
+                    'mail_id' => 2
+                ],
+                [
+                    'mail_category_id' => 2,
+                    'mail_id' => 1
+                ],
+                [
+                    'mail_category_id' => 2,
+                    'mail_id' => 2
+                ],
+            ]
+    );
+
+      MailCategori::create([
+            'name' => 'Lomba'
+        ]);
+
+        MailCategori::create([
+            'name' => 'Rapat'
+        ]);
+
+        MailCategori::create([
+            'name' => 'Kegiatan Lainnya'
+        ]);
+
         Mail::create([
           'incoming_at' => '2019-10-01 05:53:24',
           'mail_code' => '2019/22/23/23/RPLSMKN1TALAGA',

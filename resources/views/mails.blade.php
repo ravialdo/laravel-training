@@ -12,7 +12,7 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success text-center" role="alert">
+                        <div class="alert alert-success text-center animated bounceInRight slower" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
@@ -21,7 +21,7 @@
 
                     <a href="Mails/create" class="btn btn-success mb-3">Tambah Data Surat</a>
 
-                    <table class="table table-striped">
+                    <table class="table table-striped table-responsive">
                       <thead>
                         <tr>
                           <th scope="col">NO</th>
@@ -57,10 +57,10 @@
                               <form class="float-left" action="/Mails/{{$data->id}}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button class="btn btn-danger">Hapus</button>
+                                <button class="btn btn-danger btn-sm mr-2 my-1">Hapus</button>
                             </form>
 
-                            <a href="Mails/{{ $data->id }}/edit" class="btn btn-primary ml-2">Ubah</a>
+                            <a href="Mails/{{ $data->id }}/edit" class="btn btn-primary btn-sm">Ubah</a>
 
                           </td>
                         </tr>

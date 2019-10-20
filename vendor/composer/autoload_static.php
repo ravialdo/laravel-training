@@ -389,6 +389,7 @@ class ComposerStaticInit32c2ecd998b023224928378aaf416a59
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\JabatanController' => __DIR__ . '/../..' . '/app/Http/Controllers/JabatanController.php',
         'App\\Http\\Controllers\\MailController' => __DIR__ . '/../..' . '/app/Http/Controllers/MailController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

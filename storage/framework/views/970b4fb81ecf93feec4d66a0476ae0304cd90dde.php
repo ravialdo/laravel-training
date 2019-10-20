@@ -11,7 +11,7 @@
 
                 <div class="card-body">
                     <?php if(session('status')): ?>
-                        <div class="alert alert-success text-center" role="alert">
+                        <div class="alert alert-success text-center animated bounceInRight slower" role="alert">
                             <?php echo e(session('status')); ?>
 
                         </div>
@@ -19,9 +19,10 @@
 
                     <!-- konten disini  -->
 
+
                     <a href="students/create" class="btn btn-success mb-3">Tambah Data Siswa</a>
 
-                    <table class="table table-striped">
+                    <table class="table table-striped">	
                       <thead>
                         <tr>
                           <th scope="col">NO</th>
@@ -45,11 +46,11 @@
                               <form class="float-left" action="/students/<?php echo e($data->id); ?>" method="POST">
                                 <?php echo method_field('DELETE'); ?>
                                 <?php echo csrf_field(); ?>
-                                <button class="btn btn-danger">Hapus</button>
+                                <button class="btn btn-danger btn-sm mr-2 my-1">Hapus</button>
                             </form>
-
-                            <a href="students/<?php echo e($data->id); ?>/edit" class="btn btn-primary ml-2">Ubah</a>
-
+						
+                           		<a href="students/<?php echo e($data->id); ?>/edit" class="btn btn-primary btn-sm">Ubah</a>
+						
                           </td>
                         </tr>
                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -63,5 +64,4 @@
     </div>
 </div>
 <?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /storage/emulated/0/Download/laravel-training/resources/views/students.blade.php ENDPATH**/ ?>

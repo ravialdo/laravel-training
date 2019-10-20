@@ -10,7 +10,7 @@
 
                 <div class="card-body">
                     <?php if(session('status')): ?>
-                        <div class="alert alert-success text-center" role="alert">
+                        <div class="alert alert-success text-center animated bounceInRight slower" role="alert">
                             <?php echo e(session('status')); ?>
 
                         </div>
@@ -20,13 +20,14 @@
 
                     <a href="Mails/create" class="btn btn-success mb-3">Tambah Data Surat</a>
 
-                    <table class="table table-striped">
+                    <table class="table table-striped table-responsive">
                       <thead>
                         <tr>
                           <th scope="col">NO</th>
-                          <th scope="col">Mail From</th>
-                          <th scope="col">Mail To</th>
-                          <th scope="col">Subject</th>
+                          <th scope="col">Kode</th>
+                          <th scope="col">Tipe Surat</th>
+                          <th scope="col">Pembuat</th>
+                          <th scope=col">Kategori</th>
                           <th scope="col">AKSI</th>
                         </tr>
                       </thead>
@@ -35,18 +36,30 @@
                         <?php $__currentLoopData = $surat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                           <th scope="row">1</th>
-                          <td><?php echo e($data->mail_from); ?></td>
-                          <td><?php echo e($data->mail_to); ?></td>
-                          <td><?php echo e($data->mail_subject); ?></td>
+                          <td><?php echo e($data->mail_code); ?></td>
+                          <td><?php echo e($data->mailType->type); ?></td>
 
+                          <?php if( $data->user->name): ?>
+                            <td><?php echo e($data->user->name); ?></td>
+                          <?php else: ?>
+                            <td>Tidak diketahui</td>
+                          <?php endif; ?>
                           <td>
+                              <ul class="list-unstyled">
+                              <?php $__currentLoopData = $data->mail_categori; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li><?php echo e($category->name); ?></li>
+                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                              </ul>
+                            </td>
+
+                            <td>
                               <form class="float-left" action="/Mails/<?php echo e($data->id); ?>" method="POST">
                                 <?php echo method_field('DELETE'); ?>
                                 <?php echo csrf_field(); ?>
-                                <button class="btn btn-danger">Hapus</button>
+                                <button class="btn btn-danger btn-sm mr-2 my-1">Hapus</button>
                             </form>
 
-                            <a href="Mails/<?php echo e($data->id); ?>/edit" class="btn btn-primary ml-2">Ubah</a>
+                            <a href="Mails/<?php echo e($data->id); ?>/edit" class="btn btn-primary btn-sm">Ubah</a>
 
                           </td>
                         </tr>

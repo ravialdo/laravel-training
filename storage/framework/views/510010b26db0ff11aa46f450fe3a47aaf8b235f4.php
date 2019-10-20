@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
+	<script src="<?php echo e(asset('js/script.js')); ?>"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,13 +19,17 @@
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+
+    <!-- Animate CSS -->
+    <link href="<?php echo e(asset('css/animate.min.css')); ?>" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                    Aplikasi Pengarsipan Surat
+                     Laravel Training
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php echo e(__('Toggle navigation')); ?>">
                     <span class="navbar-toggler-icon"></span>
@@ -77,6 +82,7 @@
             <?php echo $__env->yieldContent('content'); ?>
         </main>
     </div>
+	
 </body>
 </html>
 <?php /**PATH /storage/emulated/0/Download/laravel-training/resources/views/layouts/app.blade.php ENDPATH**/ ?>

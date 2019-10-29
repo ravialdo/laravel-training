@@ -70,14 +70,21 @@ class JabatanController extends Controller
      */
     public function edit($id)
     {
-        $jabatan = Jabatan::find($id);
-        
-        $data = array(
-          'jabatan' => $jabatan,
-          'jabatan_selected' => $jabatan->users->pluck('id')->toArray(),
-          'users' => \App\User::all(),
-          'id' => $id
-        );
+        // $jabatan = Jabatan::find($id);
+        //
+        // $data = array(
+        //   'jabatan' => $jabatan,
+        //   'jabatan_selected' => $jabatan->users->pluck('id')->toArray(),
+        //   'users' => \App\User::all(),
+        //   'id' => $id
+        // );
+        //
+        // return view('jabatan-edit', $data);
+
+        $data = [
+          'judul' => 'Edit Jabatan',
+          'jabatan'=> Jabatan::find($id),
+        ];
 
         return view('jabatan-edit', $data);
     }
@@ -91,11 +98,17 @@ class JabatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Jabatan::where('id', $id)->update([
-          'nama' => $request->nama_jabatan,
-        ]);
+        // Jabatan::where('id', $id)->update([
+        //   'nama' => $request->nama_jabatan,
+        // ]);
+        //
+        // Session::flash('status','Data berhasil Diubah!');
+        //
+        // return redirect('jabatan');
 
-        Session::flash('status','Data berhasil Diubah!');
+        $jabatan = Jabatan::find($id);
+        $jabatan->nama = $request->get('nama_jabatan');
+        $jabatan->save();
 
         return redirect('jabatan');
     }

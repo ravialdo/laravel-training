@@ -20,24 +20,18 @@
 
                     <h1>Edit Jabatan</h1>
 
-                    <form action="{{ url('jabatan/'.$id) }}" method="POST">
+                    <form action="{{ url('jabatan/'. $jabatan->id_jabatan) }}" method="POST">
                       <div class="form-group">
                         <label>Nama Jabatan</label>
                         <input type="text" class="form-control" name="nama_jabatan" value="{{ $jabatan->nama }}">
                       </div>
-                      
+
                       @method('PUT')
-                      
+
                       @csrf
 
                       <select multiple class="form-control mb-4" name="users[]" id="">
-                        @foreach($users as $user):
-                            <option value="{{$user->id}}"
-                                @if(in_array($user->id, $jabatan_selected))
-                                    selected
-                                @endif
-                            >{{$user->name}}</option>
-                        @endforeach
+
                       </select>
 
                       <button class="btn btn-primary">Ubah</button>

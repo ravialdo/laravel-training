@@ -8,3 +8,18 @@ Many to Many => belongsToMany()
 one to Many => hasMany()
 kebalikan => one to Many => belongsTo()
 one to one => hasOne()
+
+di file view jabatan
+
+$id
+nonsyntax (string) ditandai dengan karaketer di dalam tanda petik ( " )
+
+syntax dan nonsyntax digabungkan dengan tanda titik ( . )
+
+echo '/jabatan/' . $id . '/edit';
+
+hasil echo => /jabatan/1/edit
+
+url('/jabatan' . $jabatan->id . '/edit');
+
+hasil echo => http://localhost:8000/jabatan/1/edit

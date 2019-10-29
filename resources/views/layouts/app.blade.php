@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-	<script src="{{ asset('js/script.js') }}"></script>
+	  <script src="{{ asset('js/script.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -31,6 +31,18 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                      Laravel Training
                 </a>
+                <div class="float-right">
+                  <a class="navbar-brand" href="{{ url('/students') }}">
+                       Dashboard Students
+                  </a>
+                  <a class="navbar-brand" href="{{ url('/Mails') }}">
+                       Dashboard Mail
+                  </a>
+                  <a class="navbar-brand" href="{{ url('/jabatan') }}">
+                       Dashboard Jabatan
+                  </a>
+                </div>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -81,6 +93,6 @@
             @yield('content')
         </main>
     </div>
-	
+
 </body>
 </html>

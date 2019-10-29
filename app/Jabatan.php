@@ -12,4 +12,9 @@ class Jabatan extends Model
 
     protected $primaryKey = 'id_jabatan';
 
+    public function users()
+    {
+      return $this->belongsToMany('App\User','jabatan_user','jabatan_id','user_id');
+    }
+
 }

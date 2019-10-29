@@ -2,3 +2,9 @@ Eloquent: Relationships
 1. one to one : jika suatu data dari 2 tabel memiliki masing" 1 pasang data.
 2. one to many :jika suatau data dari 2 tabel memiliki banyak data dari 1 tabel lainnya.
 3. many to many : jika suatu data dari dua tabel memiliki data antar 1 tabel dengan tabel lainnya.
+
+Fungsi Relationships
+Many to Many => belongsToMany()
+one to Many => hasMany()
+kebalikan => one to Many => belongsTo()
+one to one => hasOne()

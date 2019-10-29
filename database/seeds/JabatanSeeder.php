@@ -12,6 +12,22 @@ class JabatanSeeder extends Seeder
      */
     public function run()
     {
+
+      \DB::table('jabatan_user')->insert([
+        'jabatan_id'  => 1,
+        'user_id'     => 1
+      ]);
+
+      \DB::table('jabatan_user')->insert([
+        'jabatan_id'  => 1,
+        'user_id'     => 2
+      ]);
+
+      \DB::table('jabatan_user')->insert([
+        'jabatan_id'  => 2,
+        'user_id'     => 1
+      ]);
+
         Jabatan::create([
           'nama' => 'wali kelas',
         ]);

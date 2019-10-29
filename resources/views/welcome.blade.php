@@ -9,7 +9,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
+        <!-- Animate CSS -->
+        <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
+
         <style>
             html, body {
                 background-color: #fff;
@@ -81,7 +83,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <div class="animated flash infinite">
+                      Ravialdo Imanda Putra
+                    </div>
                 </div>
 
                 <div class="links">

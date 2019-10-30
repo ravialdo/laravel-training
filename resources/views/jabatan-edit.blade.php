@@ -34,13 +34,13 @@
 
                         @foreach($users as $user)
 
-                          <option value="{{ $user->id }}"
-                            <?php
-                             if(in_array($user->id, $jabatan->users)){
-                              echo "selected";
-                            }
-                            ?>
-                            >
+                        @if(in_array($user->id, $selected))
+                          <?php $select = 'selected' ?>
+                        @else
+                          <?php $select = '' ?>
+                        @endif
+
+                          <option value="{{ $user->id }}" {{ $select }}>
                             {{ $user->name }}
                           </option>
                         @endforeach

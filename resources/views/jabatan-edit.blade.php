@@ -30,10 +30,19 @@
 
                       @csrf
 
-                      <select multiple class="form-control mb-4" name="users[]" id="">
+                      <select multiple class="form-control mb-4" name="users[]">
 
                         @foreach($users as $user)
-                          <option value="{{$user->id }}">{{ $user->name }}</option>
+
+                          <option value="{{ $user->id }}"
+                            <?php
+                             if(in_array($user->id, $jabatan->users)){
+                              echo "selected";
+                            }
+                            ?>
+                            >
+                            {{ $user->name }}
+                          </option>
                         @endforeach
 
                       </select>

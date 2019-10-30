@@ -112,6 +112,10 @@ class JabatanController extends Controller
         $jabatan->nama = $request->get('nama_jabatan');
         $jabatan->save();
 
+        $users = $request->get('users');
+
+        $jabatan->users()->attach($users);
+
         return redirect('jabatan');
     }
 

@@ -32,6 +32,10 @@
 
                       <select multiple class="form-control mb-4" name="users[]" id="">
 
+                        @foreach($users as $user)
+                          <option value="{{$user->id }}">{{ $user->name }}</option>
+                        @endforeach
+
                       </select>
 
                       <button class="btn btn-primary">Ubah</button>

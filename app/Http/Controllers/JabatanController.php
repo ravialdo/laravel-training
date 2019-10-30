@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Jabatan;
+use App\User;
 use Session;
 
 class JabatanController extends Controller
@@ -84,6 +85,7 @@ class JabatanController extends Controller
         $data = [
           'judul' => 'Edit Jabatan',
           'jabatan'=> Jabatan::find($id),
+          'users' => User::all(),
         ];
 
         return view('jabatan-edit', $data);

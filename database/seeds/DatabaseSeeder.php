@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MailSeeder::class);
         $this->call(MailTypeSeeder::class);
         $this->call(JabatanSeeder::class);
+        $this->call(MailCategorySeeder::class);
+        $this->call(PivotMailCategorySeeder::class);
     }
 }

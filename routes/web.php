@@ -24,3 +24,5 @@ Route::resource('/students','StudentController');
 Route::resource('/Mails','MailController');
 
 Route::resource('/jabatan','JabatanController');
+
+Route::get('/ujiCobaRelasi','UjiCobaController@uji')

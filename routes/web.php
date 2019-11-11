@@ -25,4 +25,4 @@ Route::resource('/Mails','MailController');
 
 Route::resource('/jabatan','JabatanController');
 
-Route::get('/ujiCobaRelasi','UjiCobaController@uji')
+Route::get('/ujiCobaRelasi','UjiCobaController@uji');

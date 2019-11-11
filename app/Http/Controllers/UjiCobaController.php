@@ -11,7 +11,7 @@ class UjiCobaController extends Controller
 {
     public function uji(){
         $mail = Mail::find(1);
-        $mail->mail_categories;
+        $mail->mail_categori;
         return $mail;
     }
 

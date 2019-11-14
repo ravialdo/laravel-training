@@ -10,9 +10,20 @@ use App\MailCategori;
 class UjiCobaController extends Controller
 {
     public function uji(){
-        $mail = Mail::find(1);
-        $mail->mail_categori;
-        return $mail;
+        $mailCategory = Mail::find(1);
+
+        if($mailCategory) :
+
+          $mailCategory->mail_categori;
+          return $mailCategory;
+
+        else :
+
+          return 'Tidak ada data!';
+          
+        endif;
+
+
     }
 
     public function latihan(){
